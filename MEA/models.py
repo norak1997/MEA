@@ -3,14 +3,14 @@ from django.utils import timezone
 
 class Questions(models.Model):
 
-	category = models.CharField(max_length=200)
+	typescat = (('Technical','Technical'),('Non-Technical','Non-Technical'))
+	category = models.CharField(max_length = 30,choices = typescat,blank=False)
 	question = models.CharField(max_length=1000)
 	op1 = models.CharField(max_length=200)
 	op2 = models.CharField(max_length=200)
 	op3 = models.CharField(max_length=200)
 	op4 = models.CharField(max_length=200)
-	types = (('Option1',op1),('Option2',op2),('Option3',op3),('Option4',op4))
-	correct = models.CharField(max_length = 30,choices = types,blank=False)
+	correct = models.CharField(max_length = 200)
 
 	def __str__(self):
 		return self.category+self.question

@@ -1,7 +1,15 @@
 {% extends "./base.html" %}
 {% block content %}
-{% for r in placements %}
+{% for r in allplace %}
 <a href ="/placements/{{ r.name }}/{{r.company}}">{{r.name}} - <t>{{r.company}}</a>
 <br>
 {% endfor %}
+<br><br>
+
+{{specplace.name}} <t>- {{specplace.company}}
+<br>
+
+{{specplace.description}}
+
+
 {% endblock content %}

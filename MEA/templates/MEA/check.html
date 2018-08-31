@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+{% block content %}
+
+Your Score is {{score}}
+<br><br>
+{% for x in qs   %}
+{{x.0.question}}  <br>
+{{x.0.op1}}<br>
+{{x.0.op2}}<br>
+{{x.0.op3}}<br>
+{{x.0.op4}}<br>
+<br>
+Selected option is {{x.1}}
+Correct Answer is {{x.0.correct}}
+
+{% endfor %}
+
+
+
+{% endblock content %}

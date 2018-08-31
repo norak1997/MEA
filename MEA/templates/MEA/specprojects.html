@@ -1,6 +1,18 @@
+{% extends "./base.html" %}
+{% block content %}
+
+{% for r in allproj %}
+<a href ="/projects/{{ r.name }}">{{r.name}}</a>
+<br>
+{% endfor %}
+
+<br>
+<br><br>
 
 {{projects.name}}
 <br>
 <img src="{{projects.image.url}}">
 <br>
 {{projects.description}}
+
+{% endblock content %}

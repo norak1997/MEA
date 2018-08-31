@@ -1,0 +1,22 @@
+{% extends "./base.html" %}
+{% block content %}
+<form action="/check" method="post">
+	{% csrf_token %}
+{% for ques in questions %}
+Question No {{forloop.counter0}}
+{{ques.question}}<br><br> 
+<br>
+	<input type="radio" name="ans{{forloop.counter0}}" value="{{ques.op1}}" checked> {{ques.op1}}<br>
+  	<input type="radio" name="ans{{forloop.counter0}}" value="{{ques.op2}}"> {{ques.op2}}<br>
+  	<input type="radio" name="ans{{forloop.counter0}}" value="{{ques.op3}}"> {{ques.op3}}<br>
+  	<input type="radio" name="ans{{forloop.counter0}}" value="{{ques.op4}}"> {{ques.op4}}
+  	<input type="hidden" name="existq{{forloop.counter0}}" value="{{ques.id}}">
+  	<br>
+  	<br><br> 
+  {% endfor %}
+
+  
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock content %}

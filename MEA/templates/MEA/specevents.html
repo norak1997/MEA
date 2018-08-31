@@ -1,5 +1,17 @@
+{% extends "./base.html" %}
+{% block content %}
+
+
+{% for r in allev %}
+<a href ="/events/{{ r.name }}">{{r.name}}</a>
+<br>
+{% endfor %}
+<br><br><br>
+
 {{events.name}}
 <br>
 <img src="{{events.image.url}}">
 <br>
 {{events.description}}
+
+{% endblock content %}
