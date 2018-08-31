@@ -1,2 +1,13 @@
+{% extends "./base.html" %}
 
-<h1>Hello</h1>
+{% block content %}
+    <title>MEA</title>
+    <div>
+        Welcome to MEA!!
+    </div>
+    {% for r in resources %}
+    {{ r.name }}
+    <br>
+    <a href="{{ r.file.url }}">Click Here</a>
+    {% endfor %}
+{% endblock %}
